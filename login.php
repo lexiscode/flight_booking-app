@@ -4,7 +4,7 @@
 session_start();
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    if ($_POST['username'] == 'backend' && $_POST['password'] == 'group4') {
+    if (htmlspecialchars($_POST['username']) == 'backend' && htmlspecialchars($_POST['password']) == 'group4') {
 
         // this helps prevent session fixation attacks
         session_regenerate_id(true);
