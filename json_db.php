@@ -31,14 +31,14 @@ function writeList($airports)
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['submit'])) {
-        $name = trim($_POST['name']);
+        $name = trim(htmlspecialchars($_POST['name']));
         $date = trim($_POST['date']);
         $time = trim($_POST['time']);
         $from = trim($_POST['from']);
         $to = trim($_POST['to']);
-        $message = trim($_POST['message']);
-        $phoneNo = trim($_POST['phoneNo']);
-        $email = trim($_POST['email']);
+        $message = trim(htmlspecialchars($_POST['message']));
+        $phoneNo = trim(htmlspecialchars($_POST['phoneNo']));
+        $email = trim(htmlspecialchars($_POST['email']));
         $seat = trim($_POST['seat']);
         $airline = trim($_POST['airline']);
         $fare = trim($_POST['fare']);
