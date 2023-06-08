@@ -1,2 +1,1 @@
 {"name":"Alex","date":"2023-06-24","from":"Los Angeles LAX","to":"Tokyo HND","time":"18:54","message":"Any message...","phoneNo":"09021801802","email":"nwokoriealex20@gmail.com","seat":"4D","airline":"Wiz Air","fare":"oneWay","adults":"4","children":"1","infants":"1"}
-{"name":"lex","date":"2023-06-06","from":"Heathrow LHR","to":"Los Angeles LAX","time":"10:18","message":"Any message...","phoneNo":"3333","email":"email@gmail.com","seat":"1A","airline":"Wiz Air","fare":"roundTrip","adults":"1","children":"3","infants":"1"}
