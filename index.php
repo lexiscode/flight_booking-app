@@ -129,7 +129,7 @@ session_start();
                 <input type="text" name="name" id="name" size="40">
                 <br>
                 <label for="phoneNo">Phone number:</label>
-                <input type="tel" id="phoneNo" name="phoneNo" size="40">
+                <input type="tel" id="phoneNo" name="phoneNo" size="40" min="11">
 
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" size="40">
