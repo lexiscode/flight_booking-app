@@ -35,7 +35,7 @@
                         <input type="hidden" name="index" value="<?php echo $index; ?>">
                         <button type="submit" id="remove" name="removeTask">Remove</button>
                         
-                        <button id="reschedule"><a href="reschedule.php" target="_blank">Reschedule</a></button>
+                        <a href="reschedule.php" target="_blank" id="reschedule">Reschedule</a>
 
                     </div>
                 <?php endforeach; ?><br>
