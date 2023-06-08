@@ -33,34 +33,43 @@
                         <span class="booking-info"><b>Phone Number:</b> <?php echo $airport['phoneNo']; ?></span>
                         <span class="booking-info"><b>Message:</b> <?php echo $airport['message']; ?></span><br>
                         
-                        <input type="hidden" name="index" value="<?php echo $index; ?>">
-                        <button type="submit" id="remove" name="removeTask">Remove</button>
+                        <form action="" method="POST">
+                            <input type="hidden" name="index" value="<?php echo $index; ?>">
+                            <button type="submit" id="remove" name="removeTask">Remove</button>
+                        </form>
+                        
 
                         <!--   Bootstrap   -->
-                        <!-- Button trigger modal -->
-                        <button type="button" id="reschedule" data-bs-toggle="modal" data-bs-target="#staticBackdrop<?php echo $index; ?>">
-                        Reschedule
-                        </button>
+                        <form action="" method="POST">
+                            <!-- Button trigger modal -->
+                            <button type="button" id="reschedule" data-bs-toggle="modal" data-bs-target="#staticBackdrop<?php echo $index; ?>">
+                            Reschedule
+                            </button>
 
-                        <!-- Modal -->
-                        <div class="modal fade" id="staticBackdrop<?php echo $index; ?>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel<?php echo $index; ?>" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="staticBackdropLabel<?php echo $index; ?>">Reschedule</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            <!-- Modal -->
+                            <div class="modal fade" id="staticBackdrop<?php echo $index; ?>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel<?php echo $index; ?>" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="staticBackdropLabel<?php echo $index; ?>">Reschedule</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <!--our form fields-->
+                                    <?php require "modal_form.php" ?>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    
+                                    <button type="button" class="btn btn-primary" name="update">Update</button>
+                                    <input type="hidden" name="update_index" value="<?php echo $index; ?>">
+                                </div>
+                                </div>
                             </div>
-                            <div class="modal-body">
-                                <!--our form fields-->
-                                <?php require "modal_form.php" ?>
                             </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button type="submit" class="btn btn-primary" name="update">Update</button>
-                            </div>
-                            </div>
-                        </div>
-                        </div>
+
+                        </form>
+                        
 
 
                     </div>
