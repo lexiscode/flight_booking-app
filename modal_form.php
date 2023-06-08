@@ -8,6 +8,7 @@
         <option value="Dubai DXB">International Airport of Dubai DXB</option>
         <option value="Tokyo HND">Tokyo Airport Haneda HND</option>
     </select>
+    <br> <br>
 
     <label for="to">To:</label>
     <select name="to" id="to" required>
@@ -30,7 +31,7 @@
         <option value="Blue Air">Blue Air</option>
         <option value="SkyWest Airlines">SkyWest Airlines</option>
     </select>
-
+    <br><br>
     <label for="seat">Preferred Seating:</label>
     <select name="seat" id="seat" required>
         <option selected>Please select your seat</option>
@@ -47,6 +48,8 @@
     <legend><b>Set Date and Time</b></legend>
     <label for="date">Departure Date:</label>
     <input type="date" name="date" required>
+
+    <br><br>
 
     <label for="time">Departure Time:</label>
     <input type="time" name="time" required>
@@ -65,6 +68,8 @@
         <option value="5">5</option>
     </select>
 
+    <br><br>
+
     <label for="children">Children (2-11 Yrs)</label>
     <select name="children" id="children" required>
         <option value="">Please select the number of children</option>
@@ -74,6 +79,8 @@
         <option value="4">4</option>
         <option value="5">5</option>
     </select>
+
+    <br><br>
 
     <label for="infants">Infants (0-2 Yrs)</label>
     <select name="infants" id="infants" required>
@@ -104,9 +111,10 @@
     <legend><b>Personal details</b></legend>
     <label for="name">Full name:</label>
     <input type="text" name="name" id="name" size="40" required>
-    <br>
+    <br> <br>
     <label for="phoneNo">Phone number:</label>
     <input type="tel" id="phoneNo" name="phoneNo" size="40" max="11" required>
+    <br><br>
 
     <label for="email">Email:</label>
     <input type="email" id="email" name="email" size="40" required>
