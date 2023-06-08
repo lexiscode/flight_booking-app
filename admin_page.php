@@ -36,12 +36,9 @@
                         <input type="hidden" name="index" value="<?php echo $index; ?>">
                         <button type="submit" id="remove" name="removeTask">Remove</button>
 
-
-
-
-                        <!--Bootstrap-->
+                        <!--   Bootstrap   -->
                         <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop<?php echo $index; ?>">
+                        <button type="button" id="reschedule" data-bs-toggle="modal" data-bs-target="#staticBackdrop<?php echo $index; ?>">
                         Reschedule
                         </button>
 
@@ -50,29 +47,21 @@
                         <div class="modal-dialog">
                             <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="staticBackdropLabel<?php echo $index; ?>">Modal title</h5>
+                                <h5 class="modal-title" id="staticBackdropLabel<?php echo $index; ?>">Reschedule</h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
+                                <!--our form fields-->
                                 <?php require "modal_form.php" ?>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Update</button>
+                                <button type="submit" class="btn btn-primary" name="update">Update</button>
                             </div>
                             </div>
                         </div>
                         </div>
 
-
-
-
-
-
-
-
-                        
-                        <!--<a href="reschedule.php" target="_blank" id="reschedule">Reschedule</a>-->
 
                     </div>
                 <?php endforeach; ?><br>
