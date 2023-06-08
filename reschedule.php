@@ -10,8 +10,7 @@
 
     <h1 id="h1">Airline Booking Form</h1>
     <div class="container">
-        <div id="dateTime-local" class="header">
-            <form action="" method="POST" id="booking">
+            <form action="" method="POST">
                 <fieldset>
                     <legend><b>Location</b></legend>
                     <label for="from">From:</label>
