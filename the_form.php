@@ -1,7 +1,7 @@
 <fieldset>
     <legend><b>Location</b></legend>
     <label for="from">From:</label>
-    <select name="from" id="from">
+    <select name="from" id="from" required>
         <option selected>City or Airport</option>
         <option value="Heathrow LHR">London Airport-Heathrow LHR</option>
         <option value="Los Angeles LAX">International Airport of Los Angeles LAX</option>
@@ -10,7 +10,7 @@
     </select>
 
     <label for="to">To:</label>
-    <select name="to" id="to">
+    <select name="to" id="to" required>
         <option selected>City or Airport</option>
         <option value="Heathrow LHR">London Airport-Heathrow LHR</option>
         <option value="Los Angeles LAX">International Airport of Los Angeles LAX</option>
@@ -23,7 +23,7 @@
 <fieldset>
     <legend><b>Choose Preferences</b></legend>
     <label for="airline">Preferred Airline:</label>
-    <select name="airline" id="airline">
+    <select name="airline" id="airline" required>
         <option selected>Please select your preferred airline</option>
         <option value="Delta Airlines">Delta Airlines</option>
         <option value="Wiz Air">Wiz Air</option>
@@ -32,7 +32,7 @@
     </select>
 
     <label for="seat">Preferred Seating:</label>
-    <select name="seat" id="seat">
+    <select name="seat" id="seat" required>
         <option selected>Please select your seat</option>
         <option value="1A">1 A</option>
         <option value="2B">2 B</option>
@@ -56,7 +56,7 @@
 <fieldset>
     <legend><b>Age Grade:</b></legend>
     <label for="adults">Adults (12+ Yrs)</label>
-    <select name="adults" id="adults">
+    <select name="adults" id="adults" required>
         <option value="">Please select the number of adults</option>
         <option value="1">1</option>
         <option value="2">2</option>
@@ -66,7 +66,7 @@
     </select>
 
     <label for="children">Children (2-11 Yrs)</label>
-    <select name="children" id="children">
+    <select name="children" id="children" required>
         <option value="">Please select the number of children</option>
         <option value="1">1</option>
         <option value="2">2</option>
@@ -76,7 +76,7 @@
     </select>
 
     <label for="infants">Infants (0-2 Yrs)</label>
-    <select name="infants" id="infants">
+    <select name="infants" id="infants" required>
         <option value="">Please select the number of infants</option>
         <option value="1">1</option>
         <option value="2">2</option>
@@ -103,11 +103,11 @@
 <fieldset>
     <legend><b>Personal details</b></legend>
     <label for="name">Full name:</label>
-    <input type="text" name="name" id="name" size="40">
+    <input type="text" name="name" id="name" size="40" required>
     <br>
     <label for="phoneNo">Phone number:</label>
-    <input type="tel" id="phoneNo" name="phoneNo" size="40" max="11">
+    <input type="tel" id="phoneNo" name="phoneNo" size="40" max="11" required>
 
     <label for="email">Email:</label>
-    <input type="email" id="email" name="email" size="40">
+    <input type="email" id="email" name="email" size="40" required>
 </fieldset>
