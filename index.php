@@ -2,6 +2,13 @@
 
 require "json_db.php";
 
+// error handler function
+function myErrorHandler($errno, $errstr){
+    echo "<b>Error:</b> [$errno] $errstr";
+}
+// set error handler function
+set_error_handler(myErrorHandler);
+
 session_start();
 
 ?>
