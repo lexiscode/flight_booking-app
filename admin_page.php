@@ -11,11 +11,18 @@
 </head>
 
 <body>
+    <h1 id="h1" style="color: white;">Airline Booking Form</h1>
     <div id="list" class="header">
-        <h2>Booking List</h2>
+        <h2>Database (Booking List)</h2>
         <form action="" method="POST">
             <div class="container">
-                <?php foreach ($airports as $index => $airport) : ?>
+
+            <form action="" method="POST">
+                    
+                <button type="submit" id="remove" name="clearLists">Clear All</button>
+            </form>
+                
+                <?php foreach ($todoList as $index => $airport) : ?>
                     <div class="booking-item">
                         
                         <span class="booking-info"><b>Name:</b> <?php echo $airport['name']; ?></span>
@@ -34,7 +41,7 @@
                         <span class="booking-info"><b>Message:</b> <?php echo $airport['message']; ?></span><br>
                         
                         <form action="" method="POST">
-                            <input type="hidden" name="index" value="<?php echo $index; ?>">
+                            <input type="hidden" name="remove" value="<?php echo $index; ?>">
                             <button type="submit" id="remove" name="removeTask">Remove</button>
                         </form>
                         
@@ -61,8 +68,8 @@
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                                     
-                                    <button type="button" class="btn btn-primary" name="update">Update</button>
-                                    <input type="hidden" name="update_index" value="<?php echo $index; ?>">
+                                    <button type="submit" class="btn btn-primary" name="update">Update</button>
+                                    <input type="hidden" name="edit_index" value="<?php echo $index; ?>">
                                 </div>
                                 </div>
                             </div>

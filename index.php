@@ -45,7 +45,7 @@ session_start();
         <?php if (isset($_SESSION['is_logged_in']) && $_SESSION['is_logged_in']) : ?>
             <p>You are logged in. <a href="logout.php">Logout</a></p>
             <!-- only logged in user should access this link below-->
-            <a href="admin_page.php">Go To Database</a>
+            <a href="admin_page.php" target="_blank">Go To Database</a>
         <?php else : ?>
             <p>Are you an admin? If yes, <a href="login.php" target="_blank">Login</a>!</p>
         <?php endif; ?>
