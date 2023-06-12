@@ -8,7 +8,7 @@ function createHeart(){
     //The animationDuration should be b/w 2-5 secs, some will fall faster than others.
     heart.style.animationDuration = Math.random() * 2 + 3 + 's';
 
-    heart.innerHTML = '✈️'; 
+    heart.innerHTML = '🛬'; 
     document.body.appendChild(heart);
     
     //Removes the hearts at the top edges after 5 secs so we barely see any there
@@ -17,3 +17,7 @@ function createHeart(){
     }, 5000);
 }
 setInterval(createHeart, 300);
+
+
+
+

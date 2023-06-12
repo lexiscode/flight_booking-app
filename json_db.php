@@ -59,6 +59,7 @@ if (isset($_POST['submit'])){
 
             // Save the updated todo list
             saveTodoList($filename, $todoList);
+        
         }
 
 }
