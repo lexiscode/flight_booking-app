@@ -50,9 +50,9 @@ session_start();
             <p>Are you an admin? If yes, <a href="login.php" target="_blank">Login</a>!</p>
         <?php endif; ?>
 
-
     </div>
     
+    <script src="main.js"></script>
 </body>
 
 </html>
