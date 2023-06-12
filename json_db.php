@@ -1,8 +1,5 @@
 <?php
 
-
-
-
 // Function to load the todo list from JSON file
 function loadTodoList($filename) {
     if (file_exists($filename)) {
@@ -131,42 +128,6 @@ if (isset($_POST['clearLists'])) {
     $todoList = [];
     saveTodoList($filename, $todoList);
 }
-
-
-
-
-
-/*
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    if (isset($_POST['submit'])) {
-        $name = trim(htmlspecialchars($_POST['name']));
-        $date = trim($_POST['date']);
-        $time = trim($_POST['time']);
-        $from = trim($_POST['from']);
-        $to = trim($_POST['to']);
-        $message = trim(htmlspecialchars($_POST['message']));
-        $phoneNo = trim(htmlspecialchars($_POST['phoneNo']));
-        $email = trim(htmlspecialchars($_POST['email']));
-        $seat = trim($_POST['seat']);
-        $airline = trim($_POST['airline']);
-        $fare = trim($_POST['fare']);
-        $adults = trim($_POST['adults']);
-        $children = trim($_POST['children']);
-        $infants = trim($_POST['infants']);
-
-        if (
-            !empty($name) && !empty($date) && !empty($time) && !empty($from) && !empty($to)  && !empty($message) && !empty($phoneNo)  && !empty($email)  && !empty($seat)
-            && !empty($airline) && !empty($fare)  && !empty($adults)  && !empty($children) && !empty($infants)
-
-*/
-
-
-
-
-
-
-
-
 
 
 

@@ -33,8 +33,8 @@ session_start();
             <br> <br>
 
             <div align="center">
-                <input type="submit" value="Submit" name="submit">
-                <input type="reset" value="Clear Form">
+                <input type="submit" id="home_submit" value="Submit" name="submit">
+                <input type="reset" id="home_clear" value="Clear Form">
             </div>
 
         </form>
