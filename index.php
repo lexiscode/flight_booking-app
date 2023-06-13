@@ -7,6 +7,9 @@
     <title>Flight Booking App</title>
 </head>
 <body>
-    <a href="index2.php"><button type="button">BOOK NOW!</button></a>
+    <h1>Airline Booking System</h1>
+    <div class="centered-button">
+        <a href="index2.php"><button type="button">BOOK NOW!</button></a>
+    </div>
 </body>
 </html>
