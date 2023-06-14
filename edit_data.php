@@ -125,10 +125,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 </head>
 <body>
     <h1 align="center"><a href="http://localhost/lexispress_cms-app/index.php" style="text-decoration: none">-- LexisPress --</a></h1>
-    <h2>Edit Article</h2>
+    <h2>Update Customer's Data</h2>
+    <!-- HTML form which is specially for holding old data values by getting them from the database -->
+    <?php require "the_form_retrieve.php"; ?>
 </body>
 </html>
 
-<!-- HTML form which is specially for holding old data values by getting them from the database -->
-<?php require "includes/article_form.php"; ?>
+
 

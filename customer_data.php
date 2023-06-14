@@ -33,19 +33,19 @@ if (isset($_GET['id'])){
 
         <article>
             <h2><?php echo htmlspecialchars($data["customer_name"]); ?></h2> 
-            <p><?php echo htmlspecialchars($data["email"]); ?></p>
-            <p><?php echo $data["phone_no"];?></p>
-            <p><?php echo $data["adults"];?></p>
-            <p><?php echo $data["children"];?></p>
-            <p><?php echo $data["infants"];?></p>
-            <p><?php echo $data["location_from"];?></p>
-            <p><?php echo $data["location_to"];?></p>
-            <p><?php echo $data["booking_time"];?></p>
-            <p><?php echo $data["booking_date"];?></p>
-            <p><?php echo $data["airline"];?></p>
-            <p><?php echo $data["fare"];?></p>
-            <p><?php echo $data["seat"];?></p>
-            <p><?php echo $data["customer_message"];?></p>
+            <p>Email: <?php echo htmlspecialchars($data["email"]); ?></p>
+            <p>Phone Number: <?php echo $data["phone_no"];?></p>
+            <p>Number of Adult(s): <?php echo $data["adults"];?></p>
+            <p>Number of Children: <?php echo $data["children"];?></p>
+            <p>Number of Infants: <?php echo $data["infants"];?></p>
+            <p>Current Location: <?php echo $data["location_from"];?></p>
+            <p>Destination: <?php echo $data["location_to"];?></p>
+            <p>Booking Time: <?php echo $data["booking_time"];?></p>
+            <p>Booking Date: <?php echo $data["booking_date"];?></p>
+            <p>Airline: <?php echo $data["airline"];?></p>
+            <p>Fare: <?php echo $data["fare"];?></p>
+            <p>Seat: <?php echo $data["seat"];?></p>
+            <p>Your Message: <?php echo $data["customer_message"];?></p>
         </article>
         
     

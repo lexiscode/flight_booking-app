@@ -1,7 +1,6 @@
 <?php
 
-require "json_db.php";
-require "db_connect.php";
+require "includes/db_connect.php";
 
 // error handler function
 function myErrorHandler($errno, $errstr){
@@ -106,7 +105,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
     <div class="container">
         
         <form action="" method="POST" id="booking">
-            <?php require "the_form_retrieve.php" ?>
+            <?php require "the_form.php" ?>
 
             <br> <br>
 
