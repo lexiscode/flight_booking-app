@@ -78,7 +78,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
                     $id = mysqli_insert_id($conn);
                     
                     // it is more advisable to use absolute paths below than relative path
-                    header("Location: http://localhost/flight_booking/customer_data.php?id=$id"); 
+                    header("Location: http://localhost/flight_booking-app/customer_data.php?id=$id"); 
                     exit;
                 }
             }
@@ -106,7 +106,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
     <div class="container">
         
         <form action="" method="POST" id="booking">
-            <?php require "the_form.php" ?>
+            <?php require "the_form_retrieve.php" ?>
 
             <br> <br>
 

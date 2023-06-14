@@ -50,7 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
                 echo mysqli_stmt_error($stmt);
             } else {
                 // it is more advisable to use absolute paths below than relative path
-                header("Location: http://localhost/flight_booking/admin_page.php"); 
+                header("Location: http://localhost/flight_booking-app/admin_page.php"); 
                 exit;
             }
         }

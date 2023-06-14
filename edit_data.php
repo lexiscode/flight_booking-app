@@ -104,7 +104,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
                     $id = mysqli_insert_id($conn);
                     
                     // it is more advisable to use absolute paths below than relative path
-                    header("Location: http://localhost/flight_booking/admin_page.php?id=$id"); 
+                    header("Location: http://localhost/flight_booking-app/admin_page.php?id=$id"); 
                     exit;
                 }
             }
@@ -115,5 +115,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
     }
 }
 
+?>
 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 align="center"><a href="http://localhost/lexispress_cms-app/index.php" style="text-decoration: none">-- LexisPress --</a></h1>
+    <h2>Edit Article</h2>
+</body>
+</html>
+
+<!-- HTML form which is specially for holding old data values by getting them from the database -->
+<?php require "includes/article_form.php"; ?>
 
