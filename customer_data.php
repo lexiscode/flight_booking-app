@@ -1,7 +1,7 @@
 <?php
 
 require "includes/db_connect.php";
-require "includes/get_article_id.php";
+require "includes/get_customer_data_id.php";
 
 // connect to the database server
 $conn = connectDB();
