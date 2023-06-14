@@ -1,6 +1,7 @@
 <?php
 
 require "json_db.php";
+require "db_connect.php";
 
 // error handler function
 function myErrorHandler($errno, $errstr){
@@ -9,7 +10,84 @@ function myErrorHandler($errno, $errstr){
 // set error handler function
 set_error_handler("myErrorHandler");
 
+// Initialize the session.
 session_start();
+
+// Defining the variables in the global
+$name = ''; $email = ''; $phone_no = ''; $adults = ''; $children = ''; $infants = ''; $from = '';
+$to = ''; $time = ''; $date = ''; $airline = ''; $fare = ''; $seat = ''; $message = '';
+
+
+
+// Check if a new form is submitted and its not empty, then add it to the database
+if ($_SERVER["REQUEST_METHOD"] == "POST"){
+
+    if (isset($_POST['submit'])){
+
+        $customer_name = trim(htmlspecialchars($_POST['name']));
+        $booking_date = trim($_POST['date']);
+        $booking_time = trim($_POST['time']);
+        $location_from = trim($_POST['from']);
+        $location_to = trim($_POST['to']);
+        $customer_message = trim(htmlspecialchars($_POST['message']));
+        $phone_no = trim(htmlspecialchars($_POST['phone_no']));
+        $email = trim(htmlspecialchars($_POST['email']));
+        $seat = trim($_POST['seat']);
+        $airline = trim($_POST['airline']);
+        $fare = trim($_POST['fare']);
+        $adults = trim($_POST['adults']);
+        $children = trim($_POST['children']);
+        $infants = trim($_POST['infants']);
+
+        if (!empty($customer_name) && !empty($booking_date) && !empty($booking_time) && !empty($location_from) && !empty($location_to)  && !empty($customer_message)  && !empty($email)  && !empty($seat)
+            && !empty($airline) && !empty($fare)  && !empty($adults)  && !empty($children) && !empty($infants)){
+                
+            // makes the message field "null" if not filled
+            if ($message == ''){
+                $message = null;
+            }
+
+
+
+            // connect to the database server
+            $conn = connectDB();
+
+            // inserts the data into the database server
+            $sql = "INSERT INTO passengers_record (customer_name, email, phone_no, adults, children, infants, location_from, location_to, booking_time, booking_date, airline, fare, seat, customer_message)
+                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
+            // Prepares an SQL statement for execution
+            $stmt = mysqli_prepare($conn, $sql);
+
+            if ($stmt === false){
+                echo mysqli_error($conn);
+            } else {
+                // i - integer, d - double, s - string
+                // Bind variables for the parameter markers in the SQL statement prepared
+                mysqli_stmt_bind_param($stmt, "ssiiiissssssss", $customer_name, $email, $phone_no, $adults, $children, $infants, $location_from, $location_to, $booking_time, $booking_date, $airline, $fare, $seat, $customer_message);
+
+                // Executes a prepared statement
+                $results = mysqli_stmt_execute($stmt);
+
+                // checking for errors, if none, then redirect the user to the new article page
+                if ($results === false){
+                    echo mysqli_stmt_error($stmt);
+                } else {
+
+                    //Returns the value generated for an AUTO_INCREMENT column by the last query
+                    $id = mysqli_insert_id($conn);
+                    
+                    // it is more advisable to use absolute paths below than relative path
+                    header("Location: http://localhost/lexispress_cms-app/article.php?id=$id"); 
+                    exit;
+                }
+            }
+
+
+
+        }
+    }
+}
 
 ?>
 
