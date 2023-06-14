@@ -63,7 +63,7 @@ else
                                 <p><?= htmlspecialchars($data["customer_message"]) ?></p>
 
 
-                                <a href="edit_article.php?id=<?= $data['id']; ?>">Edit</a>
+                                <a href="edit_data.php?id=<?= $data['id']; ?>">Edit</a>
 
                                 <form method= "POST" action="delete_data.php?id=<?= $data['id']; ?>">
                                     <button type="submit" name="delete">Delete</button>

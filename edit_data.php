@@ -1,25 +1,46 @@
 <?php
 
-require "json_db.php";
-require "db_connect.php";
+require "includes/db_connect.php";
+require "includes/get_customer_data_id.php";
 
-// error handler function
-function myErrorHandler($errno, $errstr){
-    echo "<b>Error:</b> [$errno] $errstr";
+// connect to the database server
+$conn = connectDB();
+
+// READING or RETRIEVING from the database to get specific article post by their ids
+if (isset($_GET['id'])){
+
+    // checks if the article's id exits in the database, then returns an associative array, which stores in $article variable
+    $data = getCustomerData($conn, $_GET['id']); 
+
+    if ($data){
+        // Get array values from its keys, which then is stored as values in the HTML form below
+        $customer_name = $data['customer_name'];
+        $email = $data['email'];
+        $phone_no = $data['phone_no'];
+        $adults = $data['adults'];
+        $children = $data['children'];
+        $infants = $data['infants'];
+        $location_from = $data['location_from'];
+        $location_to = $data['location_to'];
+        $booking_time = $data['booking_time'];
+        $booking_date = $data['booking_date'];
+        $airline = $data['airline'];
+        $fare = $data['fare'];
+        $seat = $data['seat'];
+        $customer_message = $data['customer_message'];
+    } else {
+        // if a non-existing id number is in the link
+        die("Invalid ID. No data found");
+    }
+
+} else {
+    // if no id is in the link
+    die("ID not supplied. No data found");
 }
-// set error handler function
-set_error_handler("myErrorHandler");
-
-// Initialize the session.
-session_start();
-
-// Defining the variables in the global
-$name = ''; $email = ''; $phone_no = ''; $adults = ''; $children = ''; $infants = ''; $from = '';
-$to = ''; $time = ''; $date = ''; $airline = ''; $fare = ''; $seat = ''; $message = '';
 
 
 
-// Check if a new form is submitted and its not empty, then add it to the database
+// REPEAT VALIDATION, no need declaring of variables anymore
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
 
     if (isset($_POST['save'])){
@@ -48,13 +69,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
             }
 
 
-
             // connect to the database server
             $conn = connectDB();
 
             // inserts the data into the database server
             $sql = "INSERT INTO passengers_record (customer_name, email, phone_no, adults, children, infants, location_from, location_to, booking_time, booking_date, airline, fare, seat, customer_message)
                     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            
+            // update the data into the database server
+            $sql = "UPDATE passengers_record 
+                    SET customer_name = ?, email = ?, phone_no = ?, adults = ?, children = ?, infants = ?, location_from = ?, location_to = ?, booking_time = ?, booking_date = ?, airline = ?, fare = ?, seat = ?, customer_message = ?
+                    WHERE id = ?";
 
             // Prepares an SQL statement for execution
             $stmt = mysqli_prepare($conn, $sql);
@@ -62,9 +87,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
             if ($stmt === false){
                 echo mysqli_error($conn);
             } else {
-                // i - integer, d - double, s - string
+
                 // Bind variables for the parameter markers in the SQL statement prepared
-                mysqli_stmt_bind_param($stmt, "ssiiiissssssss", $customer_name, $email, $phone_no, $adults, $children, $infants, $location_from, $location_to, $booking_time, $booking_date, $airline, $fare, $seat, $customer_message);
+                // $id parameter must be included here at the end of the statement
+                mysqli_stmt_bind_param($stmt, "ssiiiissssssssi", $customer_name, $email, $phone_no, $adults, $children, $infants, $location_from, $location_to, $booking_time, $booking_date, $airline, $fare, $seat, $customer_message, $id);
 
                 // Executes a prepared statement
                 $results = mysqli_stmt_execute($stmt);
@@ -78,7 +104,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
                     $id = mysqli_insert_id($conn);
                     
                     // it is more advisable to use absolute paths below than relative path
-                    header("Location: http://localhost/flight_booking/customer_data.php?id=$id"); 
+                    header("Location: http://localhost/flight_booking/admin_page.php?id=$id"); 
                     exit;
                 }
             }
@@ -88,55 +114,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
         }
     }
 }
-
-?>
-
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <title>Flight Booking App</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-
-    <h1 id="h1">Airline Booking Form</h1>
-    <div class="container">
-        
-        <form action="" method="POST" id="booking">
-            <?php require "the_form.php" ?>
-
-            <br> <br>
-
-            <div align="center">
-                <input type="submit" id="home_submit" value="Submit" name="save">
-                <input type="reset" id="home_clear" value="Clear Form">
-            </div>
-
-        </form>
-        
-
-        <!-- Working with Sessions-->
-
-        <?php if (isset($_SESSION['is_logged_in']) && $_SESSION['is_logged_in']) : ?>
-            <p>You are logged in. <a href="logout.php">Logout</a></p>
-            <!-- only logged in user should access this link below-->
-            <a href="admin_page.php" target="_blank">Go To Database</a>
-        <?php else : ?>
-            <p>Are you an admin? If yes, <a href="login.php" target="_blank">Login</a>!</p>
-        <?php endif; ?>
-
-    </div>
-    
-    <script src="main.js"></script>
-</body>
-
-</html>
-
-
-
 
 
 
