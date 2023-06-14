@@ -10,35 +10,48 @@ $conn = connectDB();
 if (isset($_GET['id'])){
 
     // Reading from the database to get specific article row by their id
-    $article = getCustomerData($conn, $_GET['id']); // this holds an associative array
+    $data = getCustomerData($conn, $_GET['id']); // this holds an associative array
     
 } else {
     // no error message printed when there's no id included in the url link
-    $article = null; 
+    $data = null; 
 }
 ?>
 
-<?php require "includes/header.php"; ?>
 
-    <h1 align="center"><a href="http://localhost/lexispress_cms-app/index.php" style="text-decoration: none">-- LexisPress --</a></h1>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Booking</title>
+</head>
+<body>
 
-    <?php if ($article !== null): ?>
+    <h1 align="center"><a href="http://localhost/flight_booking/index2.php" style="text-decoration: none">-- Flight Booking System --</a></h1>
+
+    <?php if ($data !== null): ?>
 
         <article>
-            <h2><?php echo htmlspecialchars($article["title"]) ?></h2> 
-            <p><?php echo htmlspecialchars($article["content"]) ?></p>
-            <p><?php echo $article["date_published"]?></p>
+            <h2><?php echo htmlspecialchars($data["customer_name"]); ?></h2> 
+            <p><?php echo htmlspecialchars($data["email"]); ?></p>
+            <p><?php echo $data["phone_no"];?></p>
+            <p><?php echo $data["adults"];?></p>
+            <p><?php echo $data["children"];?></p>
+            <p><?php echo $data["infants"];?></p>
+            <p><?php echo $data["location_from"];?></p>
+            <p><?php echo $data["location_to"];?></p>
+            <p><?php echo $data["booking_time"];?></p>
+            <p><?php echo $data["booking_date"];?></p>
+            <p><?php echo $data["airline"];?></p>
+            <p><?php echo $data["fare"];?></p>
+            <p><?php echo $data["seat"];?></p>
+            <p><?php echo $data["customer_message"];?></p>
         </article>
-
-        <a href="edit_article.php?id=<?= $article['id']; ?>">Edit</a>
-
-        <form method= "POST" action="delete_article.php?id=<?= $article['id']; ?>">
-            <button type="submit" name="delete">Delete</button>
-        </form>
         
-     
+    
     <?php else: ?>
-        <p>No articles found.</p>
+        <p>No data found.</p>
     <?php endif; ?>
-
-<?php require "includes/footer.php"; ?>
+    
+</body>
+</html>
