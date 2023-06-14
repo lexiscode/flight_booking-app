@@ -65,7 +65,7 @@ else
 
                                 <a href="edit_article.php?id=<?= $data['id']; ?>">Edit</a>
 
-                                <form method= "POST" action="delete_article.php?id=<?= $data['id']; ?>">
+                                <form method= "POST" action="delete_data.php?id=<?= $data['id']; ?>">
                                     <button type="submit" name="delete">Delete</button>
                                 </form>
                                 
