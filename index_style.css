@@ -15,10 +15,6 @@
 
 
 
-
-
-
-
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
 
 *{
@@ -42,4 +38,18 @@ h1{
 .centered-button{
     text-align: center;
     margin-top: 20px;
+}
+
+#book_now {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: green;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }

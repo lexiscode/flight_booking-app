@@ -9,7 +9,7 @@
 <body>
     <h1>Airline Booking System</h1>
     <div class="centered-button">
-        <a href="index2.php"><button type="button">BOOK NOW!</button></a>
+        <a href="index2.php"><button type="button" id="book_now">BOOK NOW!</button></a>
     </div>
 </body>
 </html>
