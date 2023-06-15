@@ -34,7 +34,7 @@ if (isset($_GET['id'])){
         <article>
             <h2><?php echo htmlspecialchars($data["customer_name"]); ?></h2> 
             <p>Email: <?php echo htmlspecialchars($data["email"]); ?></p>
-            <p>Phone Number: <?php echo $data["phone_no"];?></p>
+            <p>Phone Number: <?php echo htmlspecialchars($data["phone_no"]);?></p>
             <p>Number of Adult(s): <?php echo $data["adults"];?></p>
             <p>Number of Children: <?php echo $data["children"];?></p>
             <p>Number of Infants: <?php echo $data["infants"];?></p>
@@ -45,7 +45,7 @@ if (isset($_GET['id'])){
             <p>Airline: <?php echo $data["airline"];?></p>
             <p>Fare: <?php echo $data["fare"];?></p>
             <p>Seat: <?php echo $data["seat"];?></p>
-            <p>Your Message: <?php echo $data["customer_message"];?></p>
+            <p>Your Message: <?php echo htmlspecialchars($data["customer_message"]);?></p>
         </article>
         
     
