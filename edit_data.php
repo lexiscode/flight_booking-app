@@ -129,8 +129,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
     <h1 align="center" id="h1"><a href="http://localhost/lexispress_cms-app/index.php" style="color:white; text-decoration: none">Airline Booking Form</a></h1>
     <div class="container">
         <h2 align="center">Update Customer's Data</h2>
-        <!-- HTML form which is specially for holding old data values by getting them from the database -->
-        <?php require "the_form_retrieve.php"; ?>
+
+        <form action="" method="POST">
+            <!-- HTML form which is specially for holding old data values by getting them from the database -->
+            <?php require "the_form_retrieve.php"; ?>
+
+            <div align="center">
+                <button type="submit" name="save">UPDATE NOW!</button>
+                <input type="reset" value="Clear Form">
+            </div>
+        </form>
     </div>  
 
 </body>
