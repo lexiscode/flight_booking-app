@@ -65,7 +65,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
             } else {
                 // i - integer, d - double, s - string
                 // Bind variables for the parameter markers in the SQL statement prepared
-                mysqli_stmt_bind_param($stmt, "ssiiiissssssss", $customer_name, $email, $phone_no, $adults, $children, $infants, $location_from, $location_to, $booking_time, $booking_date, $airline, $fare, $seat, $customer_message);
+                mysqli_stmt_bind_param($stmt, "ssssssssssssss", $customer_name, $email, $phone_no, $adults, $children, $infants, $location_from, $location_to, $booking_time, $booking_date, $airline, $fare, $seat, $customer_message);
 
                 // Executes a prepared statement
                 $results = mysqli_stmt_execute($stmt);

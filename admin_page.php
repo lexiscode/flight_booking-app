@@ -47,25 +47,25 @@ else
                         <li>
                             <article>
                                 <!-- htmlspecialchars() prevents XSS attack or code injections -->
-                                <h2><?= htmlspecialchars($data["customer_name"]) ?></h2> 
-                                <p><?= htmlspecialchars($data["email"]) ?></p>
-                                <p><?= htmlspecialchars($data["phone_no"]) ?></p>
-                                <p><?= htmlspecialchars($data["adults"]) ?></p>
-                                <p><?= htmlspecialchars($data["children"]) ?></p>
-                                <p><?= htmlspecialchars($data["infants"]) ?></p>
-                                <p><?= htmlspecialchars($data["location_from"]) ?></p>
-                                <p><?= htmlspecialchars($data["location_to"]) ?></p>
-                                <p><?= htmlspecialchars($data["booking_time"]) ?></p>
-                                <p><?= htmlspecialchars($data["booking_date"]) ?></p>
-                                <p><?= htmlspecialchars($data["airline"]) ?></p>
-                                <p><?= htmlspecialchars($data["fare"]) ?></p>
-                                <p><?= htmlspecialchars($data["seat"]) ?></p>
-                                <p><?= htmlspecialchars($data["customer_message"]) ?></p>
+                                <h2>Customer Name: <?= htmlspecialchars($data["customer_name"]) ?></h2> 
+                                <p>Email: <?= htmlspecialchars($data["email"]) ?></p>
+                                <p>Phone Number: <?= htmlspecialchars($data["phone_no"]) ?></p>
+                                <p>Adults: <?= htmlspecialchars($data["adults"]) ?></p>
+                                <p>Children: <?= htmlspecialchars($data["children"]) ?></p>
+                                <p>Infants: <?= htmlspecialchars($data["infants"]) ?></p>
+                                <p>Current Location: <?= htmlspecialchars($data["location_from"]) ?></p>
+                                <p>Destination: <?= htmlspecialchars($data["location_to"]) ?></p>
+                                <p>Booking Time: <?= htmlspecialchars($data["booking_time"]) ?></p>
+                                <p>Booking Date: <?= htmlspecialchars($data["booking_date"]) ?></p>
+                                <p>Airline: <?= htmlspecialchars($data["airline"]) ?></p>
+                                <p>Fare: <?= htmlspecialchars($data["fare"]) ?></p>
+                                <p>Seat: <?= htmlspecialchars($data["seat"]) ?></p>
+                                <p>Customer Message: <?= htmlspecialchars($data["customer_message"]) ?></p>
 
 
-                                <a href="edit_data.php?id=<?= $data['id']; ?>">Edit</a>
+                                <a href="edit_data.php?id=<?= $data["id"]; ?>">Edit</a>
 
-                                <form method= "POST" action="delete_data.php?id=<?= $data['id']; ?>">
+                                <form method="POST" action="delete_data.php?id=<?= $data['id']; ?>">
                                     <button type="submit" name="delete">Delete</button>
                                 </form>
                                 

@@ -45,6 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 
     if (isset($_POST['save'])){
 
+        $id = $data['id']; // get id for which we wish to edit from
         $customer_name = trim(htmlspecialchars($_POST['name']));
         $booking_date = trim($_POST['date']);
         $booking_time = trim($_POST['time']);
@@ -64,8 +65,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
             && !empty($airline) && !empty($fare)  && !empty($adults)  && !empty($children) && !empty($infants)){
                 
             // makes the message field "null" if not filled
-            if ($message == ''){
-                $message = null;
+            if ($customer_message == ''){
+                $customer_message = null;
             }
 
 
@@ -90,7 +91,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 
                 // Bind variables for the parameter markers in the SQL statement prepared
                 // $id parameter must be included here at the end of the statement
-                mysqli_stmt_bind_param($stmt, "ssiiiissssssssi", $customer_name, $email, $phone_no, $adults, $children, $infants, $location_from, $location_to, $booking_time, $booking_date, $airline, $fare, $seat, $customer_message, $id);
+                mysqli_stmt_bind_param($stmt, "ssssssssssssssi", $customer_name, $email, $phone_no, $adults, $children, $infants, $location_from, $location_to, $booking_time, $booking_date, $airline, $fare, $seat, $customer_message, $id);
 
                 // Executes a prepared statement
                 $results = mysqli_stmt_execute($stmt);
@@ -121,13 +122,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Flight Booking</title>
+    <link rel="stylesheet" href="stylings/style.css"/>
 </head>
 <body>
-    <h1 align="center"><a href="http://localhost/lexispress_cms-app/index.php" style="text-decoration: none">-- LexisPress --</a></h1>
-    <h2>Update Customer's Data</h2>
-    <!-- HTML form which is specially for holding old data values by getting them from the database -->
-    <?php require "the_form_retrieve.php"; ?>
+    <h1 align="center" id="h1"><a href="http://localhost/lexispress_cms-app/index.php" style="color:white; text-decoration: none">Airline Booking Form</a></h1>
+    <div class="container">
+        <h2 align="center">Update Customer's Data</h2>
+        <!-- HTML form which is specially for holding old data values by getting them from the database -->
+        <?php require "the_form_retrieve.php"; ?>
+    </div>  
 
 </body>
 </html>

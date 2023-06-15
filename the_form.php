@@ -106,7 +106,7 @@
     <input type="text" name="name" id="name" size="40" required>
     <br>
     <label for="phoneNo">Phone number:</label>
-    <input type="tel" id="phoneNo" name="phone_no" size="40" max="11" required>
+    <input type="text" id="phoneNo" name="phone_no" size="40" max="15" required>
 
     <label for="email">Email:</label>
     <input type="email" id="email" name="email" size="40" required>
