@@ -128,6 +128,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
     <h2>Update Customer's Data</h2>
     <!-- HTML form which is specially for holding old data values by getting them from the database -->
     <?php require "the_form_retrieve.php"; ?>
+
 </body>
 </html>
 
