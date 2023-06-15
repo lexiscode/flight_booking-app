@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $_SESSION['is_logged_in'] = true;
 
         // redirect to the admin page
-        header('Location: admin_page.php');
+        header('Location: http://localhost/flight_booking-app/admin_page.php');
         exit;
     } else {
 
@@ -23,14 +23,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 ?>
 
 
-
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="stylings/loginStyle.css">
+    <link rel="stylesheet" href="../stylings/loginStyle.css">
 </head>
 
 <body>

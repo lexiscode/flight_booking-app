@@ -97,7 +97,7 @@
 
 
         <br> <br>
-        <textarea id="message" name='message' rows="5" cols="30">value="<?= htmlspecialchars($customer_message); ?>"</textarea>
+        <textarea id="message" name='message' rows="5" cols="30"><?= htmlspecialchars($customer_message); ?></textarea>
     </fieldset>
     <br>
 
