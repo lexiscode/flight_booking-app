@@ -14,8 +14,6 @@ session_start();
 
 
 
-
-
 // Defining the variables in the global
 $name = ''; $email = ''; $phone_no = ''; $adults = ''; $children = ''; $infants = ''; $from = '';
 $to = ''; $time = ''; $date = ''; $airline = ''; $fare = ''; $seat = ''; $message = '';
@@ -124,11 +122,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
         <!-- Working with Sessions-->
 
         <?php if (isset($_SESSION['is_logged_in']) && $_SESSION['is_logged_in']) : ?>
-            <p>You are logged in. <a href="logout.php">Logout</a></p>
+            <p>You are logged in. <a href="includes/logout.php">Logout</a></p>
             <!-- only logged in user should access this link below-->
             <a href="admin_page.php" target="_blank">Go To Database</a>
         <?php else : ?>
-            <p>Are you an admin? If yes, <a href="login.php" target="_blank">Login</a>!</p>
+            <p>Are you an admin? If yes, <a href="includes/login.php" target="_blank">Login</a>!</p>
         <?php endif; ?>
 
     </div>
