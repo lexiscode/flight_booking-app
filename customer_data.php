@@ -27,7 +27,7 @@ if (isset($_GET['id'])){
 </head>
 <body>
 
-    <h1 align="center"><a href="http://localhost/flight_booking/index2.php" style="text-decoration: none">-- Flight Booking System --</a></h1>
+    <h1 align="center"><a href="http://localhost/flight_booking-app/index.php" style="text-decoration: none">-- Flight Booking System --</a></h1>
 
     <?php if ($data !== null): ?>
 

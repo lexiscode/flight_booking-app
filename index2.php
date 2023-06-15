@@ -12,6 +12,10 @@ set_error_handler("myErrorHandler");
 // Initialize the session.
 session_start();
 
+
+
+
+
 // Defining the variables in the global
 $name = ''; $email = ''; $phone_no = ''; $adults = ''; $children = ''; $infants = ''; $from = '';
 $to = ''; $time = ''; $date = ''; $airline = ''; $fare = ''; $seat = ''; $message = '';
@@ -38,12 +42,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
         $children = trim($_POST['children']);
         $infants = trim($_POST['infants']);
 
-        if (!empty($customer_name) && !empty($booking_date) && !empty($booking_time) && !empty($location_from) && !empty($location_to)  && !empty($customer_message)  && !empty($email)  && !empty($seat)
+        if (!empty($customer_name) && !empty($booking_date) && !empty($booking_time) && !empty($location_from) && !empty($location_to)  && !empty($phone_no)  && !empty($email)  && !empty($seat)
             && !empty($airline) && !empty($fare)  && !empty($adults)  && !empty($children) && !empty($infants)){
                 
             // makes the message field "null" if not filled
-            if ($message == ''){
-                $message = null;
+            if ($customer_message == ''){
+                $customer_message = null;
             }
 
 
@@ -96,7 +100,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 
 <head>
     <title>Flight Booking App</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="stylings/style.css">
 </head>
 
 <body>
