@@ -38,7 +38,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
         if ($stmt === false){
             echo mysqli_error($conn);
         } else {
-            // i - integer, d - double, s - string
             // Bind variables for the parameter markers in the SQL statement prepared
             mysqli_stmt_bind_param($stmt, "i", $id);
 

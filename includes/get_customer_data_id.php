@@ -34,8 +34,10 @@ function getCustomerData($conn, $id){
             // Gets a result set from a prepared statement as an object
             $get_result = mysqli_stmt_get_result($stmt);
             
-            // Fetch the next row of a result set as an associative, a numeric array, or both
-            return mysqli_fetch_array($get_result, MYSQLI_ASSOC);
+            // Fetch the next row of a result set as an associative, a numeric array, or both you can use
+            //return mysqli_fetch_array($get_result, MYSQLI_ASSOC);
+            return mysqli_fetch_assoc($get_result);
+            
         }
     }
 
