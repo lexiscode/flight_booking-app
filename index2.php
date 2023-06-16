@@ -1,6 +1,7 @@
 <?php
 
 require "includes/db_connect.php";
+require "includes/auth.php";
 
 // error handler function
 function myErrorHandler($errno, $errstr){
@@ -11,8 +12,6 @@ set_error_handler("myErrorHandler");
 
 // Initialize the session.
 session_start();
-
-
 
 // Defining the variables in the global
 $name = ''; $email = ''; $phone_no = ''; $adults = ''; $children = ''; $infants = ''; $from = '';
@@ -121,7 +120,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 
         <!-- Working with Sessions-->
 
-        <?php if (isset($_SESSION['is_logged_in']) && $_SESSION['is_logged_in']) : ?>
+        <?php if (isLoggedIn()) : ?>
             <p>You are logged in. <a href="includes/logout.php">Logout</a></p>
             <!-- only logged in user should access this link below-->
             <a href="admin_page.php" target="_blank">Go To Database</a>

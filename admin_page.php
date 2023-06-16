@@ -1,6 +1,17 @@
 <?php 
 
 require "includes/db_connect.php"; 
+require "includes/auth.php";
+
+// Initialize the session.
+session_start();
+
+// NB: This below will no longer be necessary if you won't be displaying the new article link page for non-login users
+if (!isLoggedIn()){
+    
+    die("Unauthorized. You must be logged in first." . PHP_EOL . "<a href='index.php'>Back To Homepage</a>");
+}
+
 
 // connect to the database server
 $conn = connectDB();
