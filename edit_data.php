@@ -10,7 +10,7 @@ $conn = connectDB();
 if (isset($_GET['id'])){
 
     // checks if the article's id exits in the database, then returns an associative array, which stores in $article variable
-    $data = getCustomerData($conn, $_GET['id']); 
+    $data = getCustomerData($conn, $_GET['id']); // associative array
 
     if ($data){
         // Get array values from its keys, which then is stored as values in the HTML form below

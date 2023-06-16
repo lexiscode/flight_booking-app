@@ -62,6 +62,7 @@ else
                                 <p>Seat: <?= htmlspecialchars($data["seat"]) ?></p>
                                 <p>Customer Message: <?= htmlspecialchars($data["customer_message"]) ?></p>
 
+                                <p>ID: <?= $data['id']?></p>
 
                                 <a href="edit_data.php?id=<?= $data["id"]; ?>">Edit</a>
 

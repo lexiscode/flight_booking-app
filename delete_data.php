@@ -39,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
             echo mysqli_error($conn);
         } else {
             // Bind variables for the parameter markers in the SQL statement prepared
-            mysqli_stmt_bind_param($stmt, "i", $id);
+            mysqli_stmt_bind_param($stmt, "i", $_GET["id"]);
 
             // Executes a prepared statement
             $results = mysqli_stmt_execute($stmt);
