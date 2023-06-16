@@ -47,6 +47,8 @@ if (isset($_GET['id'])){
             <p>Seat: <?php echo $data["seat"];?></p>
             <p>Your Message: <?php echo htmlspecialchars($data["customer_message"]);?></p>
         </article>
+
+        <p><i>Click here to return to the <a href="http://localhost/flight_booking-app/index2.php">Booking-Form</a></i></p>
         
     
     <?php else: ?>
