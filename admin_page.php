@@ -30,6 +30,20 @@ else
     //print_r($all_data);  prints an associative array
 
 
+// Check if the "Clear All" button was clicked
+if(isset($_POST['clear_all'])) {
+    
+    // SQL query to delete all data from the table
+    // $sql = DELETE FROM rooms_record
+    $sql = "TRUNCATE TABLE passengers_record";
+
+    // Execute the SQL query
+    mysqli_query($conn, $sql);
+
+    header("Location: http://localhost/flight_booking-app/admin_page.php");
+    exit;
+}
+
 ?>
 
 
@@ -51,6 +65,10 @@ else
         <h2>Database (Booking List)</h2>
         <form action="" method="POST">
             <div class="container">
+
+            <form action="" method="POST">
+                <button type="submit" name="clear_all">Clear Lists</button>
+            </form>
 
             <?php if(!empty($all_data)): ?>
                 <ul>
