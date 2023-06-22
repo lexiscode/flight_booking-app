@@ -14,9 +14,8 @@ set_error_handler("myErrorHandler");
 session_start();
 
 // Defining the variables in the global
-$name = ''; $email = ''; $phone_no = ''; $adults = ''; $children = ''; $infants = ''; $from = '';
-$to = ''; $time = ''; $date = ''; $airline = ''; $fare = ''; $seat = ''; $message = '';
-
+$name = ''; $email = ''; $phone_no = ''; $crew = ''; $to = ''; $time = ''; $date = ''; $airline = ''; 
+$fare = ''; $seat = ''; $message = '';
 
 
 // Check if a new form is submitted and its not empty, then add it to the database
@@ -27,7 +26,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
         $customer_name = trim(htmlspecialchars($_POST['name']));
         $booking_date = trim($_POST['date']);
         $booking_time = trim($_POST['time']);
-        $location_from = trim($_POST['from']);
         $location_to = trim($_POST['to']);
         $customer_message = trim(htmlspecialchars($_POST['message']));
         $phone_no = trim(htmlspecialchars($_POST['phone_no']));
@@ -35,12 +33,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
         $seat = trim($_POST['seat']);
         $airline = trim($_POST['airline']);
         $fare = trim($_POST['fare']);
-        $adults = trim($_POST['adults']);
-        $children = trim($_POST['children']);
-        $infants = trim($_POST['infants']);
+        $crew = trim($_POST['crew']);
 
-        if (!empty($customer_name) && !empty($booking_date) && !empty($booking_time) && !empty($location_from) && !empty($location_to)  && !empty($phone_no)  && !empty($email)  && !empty($seat)
-            && !empty($airline) && !empty($fare)  && !empty($adults)  && !empty($children) && !empty($infants)){
+        if (!empty($customer_name) && !empty($booking_date) && !empty($booking_time) && !empty($location_to)  && !empty($phone_no)  && !empty($email)  && !empty($seat)
+            && !empty($airline) && !empty($fare)  && !empty($crew)){
                 
             // makes the message field "null" if not filled
             if ($customer_message == ''){
@@ -53,8 +49,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
             $conn = connectDB();
 
             // inserts the data into the database server
-            $sql = "INSERT INTO passengers_record (customer_name, email, phone_no, adults, children, infants, location_from, location_to, booking_time, booking_date, airline, fare, seat, customer_message)
-                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            $sql = "INSERT INTO passengers_record (customer_name, email, phone_no, crew, location_to, booking_time, booking_date, airline, fare, seat, customer_message)
+                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
             // Prepares an SQL statement for execution
             $stmt = mysqli_prepare($conn, $sql);
@@ -64,7 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
             } else {
                 // i - integer, d - double, s - string
                 // Bind variables for the parameter markers in the SQL statement prepared
-                mysqli_stmt_bind_param($stmt, "ssssssssssssss", $customer_name, $email, $phone_no, $adults, $children, $infants, $location_from, $location_to, $booking_time, $booking_date, $airline, $fare, $seat, $customer_message);
+                mysqli_stmt_bind_param($stmt, "sssssssssss", $customer_name, $email, $phone_no, $crew, $location_to, $booking_time, $booking_date, $airline, $fare, $seat, $customer_message);
 
                 // Executes a prepared statement
                 $results = mysqli_stmt_execute($stmt);
@@ -83,8 +79,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
                 }
             }
 
-
-
         }
     }
 }
@@ -100,9 +94,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
     <link rel="stylesheet" href="stylings/style.css">
 </head>
 
-<body>
+<body class="video-container">
 
     <h1 id="h1">Airline Booking Form</h1>
+
     <div class="container">
         
         <form action="" method="POST" id="booking">

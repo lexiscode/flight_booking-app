@@ -7,7 +7,7 @@
     <title>Flight Booking App</title>
 </head>
 <body>
-    <h1>Airline Booking System</h1>
+    <h1>AeroLux Airline Booking System</h1>
     <div class="centered-button">
         <a href="index2.php"><button type="button" id="book_now">BOOK NOW!</button></a>
     </div>

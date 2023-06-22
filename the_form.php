@@ -1,13 +1,5 @@
 <fieldset>
     <legend><b>Location</b></legend>
-    <label for="from">From:</label>
-    <select name="from" id="from" required>
-        <option selected>City or Airport</option>
-        <option value="Heathrow LHR">London Airport-Heathrow LHR</option>
-        <option value="Los Angeles LAX">International Airport of Los Angeles LAX</option>
-        <option value="Dubai DXB">International Airport of Dubai DXB</option>
-        <option value="Tokyo HND">Tokyo Airport Haneda HND</option>
-    </select>
 
     <label for="to">To:</label>
     <select name="to" id="to" required>
@@ -54,36 +46,22 @@
 <br>
 
 <fieldset>
-    <legend><b>Age Grade:</b></legend>
-    <label for="adults">Adults (12+ Yrs)</label>
-    <select name="adults" id="adults" required>
+    <legend><b>Crew:</b></legend>
+    <label for="crew">Crew</label>
+    <select name="crew" id="crew" required>
         <option value="">Please select the number of adults</option>
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
         <option value="4">4</option>
         <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
     </select>
 
-    <label for="children">Children (2-11 Yrs)</label>
-    <select name="children" id="children" required>
-        <option value="">Please select the number of children</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-    </select>
-
-    <label for="infants">Infants (0-2 Yrs)</label>
-    <select name="infants" id="infants" required>
-        <option value="">Please select the number of infants</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-    </select>
 </fieldset>
 <br> <br>
 

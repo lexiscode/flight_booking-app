@@ -17,10 +17,7 @@ if (isset($_GET['id'])){
         $customer_name = $data['customer_name'];
         $email = $data['email'];
         $phone_no = $data['phone_no'];
-        $adults = $data['adults'];
-        $children = $data['children'];
-        $infants = $data['infants'];
-        $location_from = $data['location_from'];
+        $adults = $data['crew'];
         $location_to = $data['location_to'];
         $booking_time = $data['booking_time'];
         $booking_date = $data['booking_date'];
@@ -49,7 +46,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
         $customer_name = trim(htmlspecialchars($_POST['name']));
         $booking_date = trim($_POST['date']);
         $booking_time = trim($_POST['time']);
-        $location_from = trim($_POST['from']);
         $location_to = trim($_POST['to']);
         $customer_message = trim(htmlspecialchars($_POST['message']));
         $phone_no = trim(htmlspecialchars($_POST['phone_no']));
@@ -57,12 +53,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
         $seat = trim($_POST['seat']);
         $airline = trim($_POST['airline']);
         $fare = trim($_POST['fare']);
-        $adults = trim($_POST['adults']);
-        $children = trim($_POST['children']);
-        $infants = trim($_POST['infants']);
+        $crew = trim($_POST['crew']);
+    
 
-        if (!empty($customer_name) && !empty($booking_date) && !empty($booking_time) && !empty($location_from) && !empty($location_to)  && !empty($customer_message)  && !empty($email)  && !empty($seat)
-            && !empty($airline) && !empty($fare)  && !empty($adults)  && !empty($children) && !empty($infants)){
+        if (!empty($customer_name) && !empty($booking_date) && !empty($booking_time) && !empty($location_to)  && !empty($customer_message)  && !empty($email)  && !empty($seat)
+            && !empty($airline) && !empty($fare) && !empty($crew)){
                 
             // makes the message field "null" if not filled
             if ($customer_message == ''){
@@ -75,7 +70,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
             
             // update the data into the database server
             $sql = "UPDATE passengers_record 
-                    SET customer_name = ?, email = ?, phone_no = ?, adults = ?, children = ?, infants = ?, location_from = ?, location_to = ?, booking_time = ?, booking_date = ?, airline = ?, fare = ?, seat = ?, customer_message = ?
+                    SET customer_name = ?, email = ?, phone_no = ?, crew = ?, location_to = ?, booking_time = ?, booking_date = ?, airline = ?, fare = ?, seat = ?, customer_message = ?
                     WHERE id = ?";
 
             // Prepares an SQL statement for execution
@@ -87,7 +82,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 
                 // Bind variables for the parameter markers in the SQL statement prepared
                 // $id parameter must be included here at the end of the statement
-                mysqli_stmt_bind_param($stmt, "ssssssssssssssi", $customer_name, $email, $phone_no, $adults, $children, $infants, $location_from, $location_to, $booking_time, $booking_date, $airline, $fare, $seat, $customer_message, $id);
+                mysqli_stmt_bind_param($stmt, "sssssssssssi", $customer_name, $email, $phone_no, $crew, $location_to, $booking_time, $booking_date, $airline, $fare, $seat, $customer_message, $id);
 
                 // Executes a prepared statement
                 $results = mysqli_stmt_execute($stmt);
