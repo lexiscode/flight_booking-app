@@ -123,7 +123,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 
         <form action="" method="POST">
             <!-- HTML form which is specially for holding old data values by getting them from the database -->
-            <?php require "the_form_retrieve.php"; ?>
+            <?php require "./includes/the_form_retrieve.php"; ?>
 
             <div align="center">
                 <button type="submit" name="save">UPDATE NOW!</button>

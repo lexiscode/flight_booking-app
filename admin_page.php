@@ -158,9 +158,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
                         </div>
                         <div class="modal-body">
 
-                            <div class="w-50 m-auto">
+                            <div class="w-55 m-auto">
 
-                                <?php require "the_form.php"; ?>
+                                <!--HTML form-->
+                                <?php require "./includes/admin_form.php"; ?>
             
                             </div>
 

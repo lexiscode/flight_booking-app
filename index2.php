@@ -91,17 +91,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 
 <head>
     <title>Flight Booking App</title>
-    <link rel="stylesheet" href="stylings/style.css">
+    <link rel="stylesheet" href="./stylings/style.css">
 </head>
 
-<body class="video-container">
+<body>
 
-    <h1 id="h1">Airline Booking Form</h1>
+    <h1 id="h1">AeroLux Airline Booking Form</h1>
 
     <div class="container">
         
         <form action="" method="POST" id="booking">
-            <?php require "the_form.php" ?>
+            <?php require "./includes/the_form.php" ?>
 
             <br> <br>
 

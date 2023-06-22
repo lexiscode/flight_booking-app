@@ -9,6 +9,22 @@
         <option value="Dubai DXB">International Airport of Dubai DXB</option>
         <option value="Tokyo HND">Tokyo Airport Haneda HND</option>
     </select>
+
+    <br> <br>
+    <label for="crew">Crew:</label>
+    <select name="crew" id="crew" required>
+        <option value="">Please select the number of adults</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+    </select>
 </fieldset>
 
 <br>
@@ -45,24 +61,6 @@
 </fieldset>
 <br>
 
-<fieldset>
-    <legend><b>Crew:</b></legend>
-    <label for="crew">Crew</label>
-    <select name="crew" id="crew" required>
-        <option value="">Please select the number of adults</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-        <option value="6">6</option>
-        <option value="7">7</option>
-        <option value="8">8</option>
-        <option value="9">9</option>
-        <option value="10">10</option>
-    </select>
-
-</fieldset>
 <br> <br>
 
 <fieldset>
