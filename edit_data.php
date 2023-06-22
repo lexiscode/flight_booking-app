@@ -72,10 +72,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 
             // connect to the database server
             $conn = connectDB();
-
-            // inserts the data into the database server
-            $sql = "INSERT INTO passengers_record (customer_name, email, phone_no, adults, children, infants, location_from, location_to, booking_time, booking_date, airline, fare, seat, customer_message)
-                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             
             // update the data into the database server
             $sql = "UPDATE passengers_record 
