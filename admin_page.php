@@ -129,7 +129,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
     <title>FLIGHT BOOKING APP</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
   </head>
-  <body style="background-color: #025464"> 
+  <body style="background-color: rebeccapurple"> 
 
   <div class="container">
         <!--Introduction header-->
@@ -203,19 +203,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
             <table class="table table-dark table-hover">
                 <thead align="center">
                     <tr>
-                    <th scope="col">#ID</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Phone No.</th>
-                    <th scope="col">Crew</th>
-                    <th scope="col">Destination</th>
-                    <th scope="col">Booking Time</th>
-                    <th scope="col">Booking Date</th>
-                    <th scope="col">Airline</th>
-                    <th scope="col">Fare</th>
-                    <th scope="col">Seat</th>
-                    <th scope="col">Message</th>
-                    <th scope="col">Action</th>
+                    <th scope="col" class="table-secondary">#ID</th>
+                    <th scope="col" class="table-secondary">NAME</th>
+                    <th scope="col" class="table-secondary">EMAIL</th>
+                    <th scope="col" class="table-secondary">PHONE NO.</th>
+                    <th scope="col" class="table-secondary">CREW</th>
+                    <th scope="col" class="table-secondary">DESTINATION</th>
+                    <th scope="col" class="table-secondary">BOOKING TIME</th>
+                    <th scope="col" class="table-secondary">BOOKING DATE</th>
+                    <th scope="col" class="table-secondary">AIRLINE</th>
+                    <th scope="col" class="table-secondary">FARE</th>
+                    <th scope="col" class="table-secondary">SEAT</th>
+                    <th scope="col" class="table-secondary">MESSAGE</th>
+                    <th scope="col" class="table-secondary">ACTION</th>
                     </tr>
                 </thead>
 

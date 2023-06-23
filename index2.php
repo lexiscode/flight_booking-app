@@ -116,11 +116,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
         <!-- Working with Sessions-->
 
         <?php if (isLoggedIn()) : ?>
-            <p>You are logged in. <a href="./includes/logout.php">Logout</a></p>
+            <p>You are logged in. <a href="logout.php">Logout</a></p>
             <!-- only logged in user should access this link below-->
             <a href="admin_page.php" target="_blank">Go To Database</a>
         <?php else : ?>
-            <p>Are you an admin? If yes, <a href="includes/login.php" target="_blank">Login</a>!</p>
+            <p>Are you an admin? If yes, <a href="login.php" target="_blank">Login</a>!</p>
         <?php endif; ?>
 
     </div>
