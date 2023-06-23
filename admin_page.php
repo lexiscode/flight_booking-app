@@ -203,7 +203,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
             <table class="table table-dark table-hover">
                 <thead align="center">
                     <tr>
-                    <th scope="col" class="table-secondary">#ID</th>
+                    <!--<th scope="col" class="table-secondary">#ID</th>-->
                     <th scope="col" class="table-secondary">NAME</th>
                     <th scope="col" class="table-secondary">EMAIL</th>
                     <th scope="col" class="table-secondary">PHONE NO.</th>
@@ -225,7 +225,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 
                     <?php foreach ($all_data as $index => $data): ?>
                     <tr>
-                        <td>AIR<?= $data["id"]; ?></td> 
+                        <!--<td>AIR<= $data["id"]; ?></td> -->
                         <td><?= htmlspecialchars($data["customer_name"]) ?></td> 
                         <td><?= htmlspecialchars($data["email"]) ?></td>
                         <td><?= htmlspecialchars($data["phone_no"]) ?></td>

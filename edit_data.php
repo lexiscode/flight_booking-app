@@ -17,7 +17,7 @@ if (isset($_GET['id'])){
         $customer_name = $data['customer_name'];
         $email = $data['email'];
         $phone_no = $data['phone_no'];
-        $adults = $data['crew'];
+        $crew = $data['crew'];
         $location_to = $data['location_to'];
         $booking_time = $data['booking_time'];
         $booking_date = $data['booking_date'];
