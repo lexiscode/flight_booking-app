@@ -116,7 +116,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
         <!-- Working with Sessions-->
 
         <?php if (isLoggedIn()) : ?>
-            <p>You are logged in. <a href="includes/logout.php">Logout</a></p>
+            <p>You are logged in. <a href="./includes/logout.php">Logout</a></p>
             <!-- only logged in user should access this link below-->
             <a href="admin_page.php" target="_blank">Go To Database</a>
         <?php else : ?>

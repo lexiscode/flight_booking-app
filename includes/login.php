@@ -29,13 +29,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../stylings/loginStyle.css">
+    <link rel="stylesheet" href="../stylings/login.css">
 </head>
 
 <body>
 
-    <h1 id="h1">Airline Booking Form</h1>
-    <h2 align="center">LOGIN</h2>
+    <h1>AeroLux Airline Booking Form</h1>
+
+    <h2>LOGIN</h2>
 
     <?php if (!empty($error)) : ?>
         <p><?= $error ?></p>
