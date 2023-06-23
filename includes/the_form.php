@@ -13,7 +13,7 @@
     <br> <br>
     <label for="crew">Crew:</label>
     <select name="crew" id="crew" required>
-        <option value="">Please select the number of adults</option>
+        <option value="">Please select the number of travellers</option>
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>

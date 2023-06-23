@@ -153,7 +153,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
                         <form action="" method="POST" autocomplete="off">
                         <div class="modal-content" style="background-color: gray">
                         <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="staticBackdropLabel" style="color: white">Room Booking</h1>
+                            <h1 class="modal-title fs-5" id="staticBackdropLabel" style="color: white">Book a Flight Now</h1>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
@@ -237,7 +237,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
                         <td><?= htmlspecialchars($data["fare"]) ?></td>
                         <td><?= htmlspecialchars($data["seat"]) ?></td>
                         <td><?= htmlspecialchars($data["customer_message"]) ?></td>
-                        <td><a id="edit" href="edit_data.php?id=<?= $data["id"]; ?>">Edit</a> <a id="delete" href="delete_data.php?id=<?= $data['id']; ?>">Delete</a></td>
+                        <td><a class="btn btn-primary" href="edit_data.php?id=<?= $data["id"]; ?>">Edit</a> <a class="btn btn-danger" href="delete_data.php?id=<?= $data['id']; ?>">Delete</a></td>
                     </tr>
                     <?php endforeach; ?>
                 </tbody>
