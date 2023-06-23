@@ -1,7 +1,7 @@
 <fieldset>
     <legend><b>Location</b></legend>
 
-    <label for="to">To:</label>
+    <label for="to">Destination:</label>
     <select name="to" id="to" required>
         <?php
         $destination = ["London Airport-Heathrow LHR", "International Airport of Los Angeles LAX", "International Airport of Dubai DXB", "Tokyo Airport Haneda HND"];
@@ -68,7 +68,6 @@
     <label for="time">Departure Time:</label>
     <input type="time" name="time" value="<?= htmlspecialchars($booking_time); ?>" required>
 </fieldset>
-<br>
 
 <br> <br>
 

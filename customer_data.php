@@ -16,6 +16,16 @@ if (isset($_GET['id'])){
     // no error message printed when there's no id included in the url link
     $data = null; 
 }
+
+
+
+// download to pdf file
+if (isset($_POST['download'])){
+
+    header("Location: http://localhost/flight_booking-app/print_pdf.php?id={$data['id']}");
+    exit;
+}
+
 ?>
 
 
@@ -46,6 +56,11 @@ if (isset($_GET['id'])){
                 <p>Fare: <?php echo $data["fare"];?></p>
                 <p>Seat: <?php echo $data["seat"];?></p>
                 <p>Your Message: <?php echo htmlspecialchars($data["customer_message"]);?></p>
+
+                <form action="" method="POST">
+                    <button id="pdf" type="submit" name="download">Download PDF</button>
+                </form>
+
             </article>
 
             <p class="booking_link"><i>Click here to return to the <a href="http://localhost/flight_booking-app/index2.php">booking form</a></i></p>
@@ -59,3 +74,4 @@ if (isset($_GET['id'])){
     
 </body>
 </html>
+

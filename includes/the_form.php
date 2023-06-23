@@ -1,7 +1,7 @@
 <fieldset>
     <legend><b>Location</b></legend>
 
-    <label for="to">To:</label>
+    <label for="to">Destination:</label>
     <select name="to" id="to" required>
         <option selected>City or Airport</option>
         <option value="Heathrow LHR">London Airport-Heathrow LHR</option>
@@ -59,8 +59,6 @@
     <label for="time">Departure Time:</label>
     <input type="time" name="time" required>
 </fieldset>
-<br>
-
 <br> <br>
 
 <fieldset>
