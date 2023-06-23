@@ -249,8 +249,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
             </table>
 
             
-
-            
             <div align="center">
                 <i><a class="btn btn-link" href="index.php" role="button" style="color: white">Back to Homepage</a></i>
             </div>

@@ -96,7 +96,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 
 <body>
 
-    <h1 id="h1">AeroLux Airline Booking Form</h1>
+    <h1>AeroLux Airline Booking Form</h1>
 
     <div class="container">
         

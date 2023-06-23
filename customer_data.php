@@ -24,17 +24,18 @@ if (isset($_GET['id'])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flight Booking</title>
+    <link href="./stylings/customer_data.css" rel="stylesheet">
 </head>
 <body>
 
-    <h1 align="center"><a href="http://localhost/flight_booking-app/index.php" style="text-decoration: none">-- Flight Booking System --</a></h1>
+    <h1><a href="http://localhost/flight_booking-app/index.php" style="text-decoration: none">AeroLux Airline Booking Form</a></h1>
 
     <div>
         <?php if ($data !== null): ?>
 
             <article>
                 <h2><?php echo htmlspecialchars($data["customer_name"]); ?></h2> 
-                <p>ID: <?php echo htmlspecialchars($data["id"]); ?></p>
+                <p><b>ID:</b> <?php echo htmlspecialchars($data["id"]); ?></p>
                 <p>Email: <?php echo htmlspecialchars($data["email"]); ?></p>
                 <p>Phone Number: <?php echo htmlspecialchars($data["phone_no"]);?></p>
                 <p>Number of Traveler(s): <?php echo $data["crew"];?></p>
@@ -47,7 +48,7 @@ if (isset($_GET['id'])){
                 <p>Your Message: <?php echo htmlspecialchars($data["customer_message"]);?></p>
             </article>
 
-            <p><i>Click here to return to the <a href="http://localhost/flight_booking-app/index2.php">Booking-Form</a></i></p>
+            <p class="booking_link"><i>Click here to return to the <a href="http://localhost/flight_booking-app/index2.php">booking form</a></i></p>
             
         
         <?php else: ?>
