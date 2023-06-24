@@ -44,6 +44,11 @@ if (isset($_POST['download'])){
         <?php if ($data !== null): ?>
 
             <article>
+
+                <?php if ($data["image_file"]): ?>
+                    <img src="http://localhost/flight_booking-app/uploads/<?= $data["image_file"]; ?>" alt="">
+                <?php endif; ?>
+
                 <h2><?php echo htmlspecialchars($data["customer_name"]); ?></h2> 
                 <p><b>ID:</b> <?php echo htmlspecialchars($data["id"]); ?></p>
                 <p>Email: <?php echo htmlspecialchars($data["email"]); ?></p>

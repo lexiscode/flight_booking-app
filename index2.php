@@ -23,6 +23,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 
     if (isset($_POST['save'])){
 
+        require "includes/display_upload.php";
+
         $customer_name = trim(htmlspecialchars($_POST['name']));
         $booking_date = trim($_POST['date']);
         $booking_time = trim($_POST['time']);
@@ -35,6 +37,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
         $fare = trim($_POST['fare']);
         $crew = trim($_POST['crew']);
 
+  
+
         if (!empty($customer_name) && !empty($booking_date) && !empty($booking_time) && !empty($location_to)  && !empty($phone_no)  && !empty($email)  && !empty($seat)
             && !empty($airline) && !empty($fare)  && !empty($crew)){
                 
@@ -43,14 +47,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
                 $customer_message = null;
             }
 
-
-
             // connect to the database server
             $conn = connectDB();
 
             // inserts the data into the database server
-            $sql = "INSERT INTO passengers_record (customer_name, email, phone_no, crew, location_to, booking_time, booking_date, airline, fare, seat, customer_message)
-                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            $sql = "INSERT INTO passengers_record (image_file, customer_name, email, phone_no, crew, location_to, booking_time, booking_date, airline, fare, seat, customer_message)
+                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
             // Prepares an SQL statement for execution
             $stmt = mysqli_prepare($conn, $sql);
@@ -60,7 +62,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
             } else {
                 // i - integer, d - double, s - string
                 // Bind variables for the parameter markers in the SQL statement prepared
-                mysqli_stmt_bind_param($stmt, "sssssssssss", $customer_name, $email, $phone_no, $crew, $location_to, $booking_time, $booking_date, $airline, $fare, $seat, $customer_message);
+                mysqli_stmt_bind_param($stmt, "ssssssssssss", $filename, $customer_name, $email, $phone_no, $crew, $location_to, $booking_time, $booking_date, $airline, $fare, $seat, $customer_message);
 
                 // Executes a prepared statement
                 $results = mysqli_stmt_execute($stmt);
@@ -100,8 +102,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 
     <div class="container">
         
-        <form action="" method="POST" id="booking">
+        <form method="POST" id="booking" enctype="multipart/form-data">
             <?php require "./includes/the_form.php" ?>
+            <br>
+
+            <div>
+                <label for="file">Image File</label>
+                <!--if "multiple" attribute is added below, it will allow for multiple uploads-->
+                <input type="file" name="file" id="file">
+            </div>
+
 
             <br> <br>
 
@@ -114,7 +124,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
         
 
         <!-- Working with Sessions-->
-
+        <center>
         <?php if (isLoggedIn()) : ?>
             <p>You are logged in. <a href="logout.php">Logout</a></p>
             <!-- only logged in user should access this link below-->
@@ -122,6 +132,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
         <?php else : ?>
             <p>Are you an admin? If yes, <a href="login.php" target="_blank">Login</a>!</p>
         <?php endif; ?>
+        </center>
 
     </div>
     
