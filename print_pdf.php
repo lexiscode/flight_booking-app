@@ -1,7 +1,11 @@
 <?php
 
+use Dompdf\Dompdf;
+
 require "includes/db_connect.php";
 require "includes/get_customer_data_id.php";
+// include Dompdf library
+require_once 'vendor/autoload.php';
 
 // connect to the database server
 $conn = connectDB();
@@ -52,7 +56,7 @@ ob_start(); // Start output buffering
                 <p>Fare: <?php echo $data["fare"];?></p>
                 <p>Seat: <?php echo $data["seat"];?></p>
                 <p>Your Message: <?php echo htmlspecialchars($data["customer_message"]);?></p>
-
+            </article>
 
             <p class="booking_link"><i>Click here to return to the <a href="http://localhost/flight_booking-app/index2.php">booking form</a></i></p>
             
@@ -70,11 +74,9 @@ ob_start(); // Start output buffering
 
 $html = ob_get_clean(); // Get the buffered output and clean the buffer
 
-// include Dompdf library
-require_once 'vendor/autoload.php';
+
 
 //Create a new Dompdf instance
-use Dompdf\Dompdf;
 $dompdf = new Dompdf();
 
 // Load HTML contents
