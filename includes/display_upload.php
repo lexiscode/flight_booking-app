@@ -43,13 +43,13 @@ try {
     $base = mb_substr($base, 0, 200);
     $filename = $base . "." . $pathinfo['extension'];
 
-    $destination = "../uploads/$filename"; // prevents code injection
+    $destination = "./uploads/$filename"; // prevents code injection
 
     // check if the filename already exists first before moving the file to the "uploads" directory
     $i = 1;
     while (file_exists($destination)) {
         $filename = $base . "-$i." . $pathinfo['extension'];
-        $destination = "../uploads/$filename";
+        $destination = "./uploads/$filename";
         $i++;
     }
 
