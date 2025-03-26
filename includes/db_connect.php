@@ -11,8 +11,8 @@ function connectDB(){
 
     $db_host = "localhost";
     $db_name = "flight_booking";
-    $db_user = "lexiscode";
-    $db_passwd = "lj.qztk-Kn7Awl6S";
+    $db_user = "root";
+    $db_passwd = "";
 
     $conn = mysqli_connect($db_host, $db_user, $db_passwd, $db_name);
 

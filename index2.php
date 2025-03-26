@@ -3,7 +3,7 @@
 require "includes/db_connect.php";
 require "includes/auth.php";
 
-// error handler function
+// initiate handler function
 function myErrorHandler($errno, $errstr){
     echo "<b>Error:</b> [$errno] $errstr";
 }
@@ -12,10 +12,6 @@ set_error_handler("myErrorHandler");
 
 // Initialize the session.
 session_start();
-
-// Defining the variables in the global
-$name = ''; $email = ''; $phone_no = ''; $crew = ''; $to = ''; $time = ''; $date = ''; $airline = ''; 
-$fare = ''; $seat = ''; $message = '';
 
 
 // Check if a new form is submitted and its not empty, then add it to the database
@@ -37,10 +33,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
         $fare = trim($_POST['fare']);
         $crew = trim($_POST['crew']);
 
-  
-
         if (!empty($customer_name) && !empty($booking_date) && !empty($booking_time) && !empty($location_to)  && !empty($phone_no)  && !empty($email)  && !empty($seat)
-            && !empty($airline) && !empty($fare)  && !empty($crew)){
+            && !empty($airline) && !empty($fare) && !empty($crew)){
                 
             // makes the message field "null" if not filled
             if ($customer_message == ''){
@@ -112,22 +106,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
                 <input type="file" name="file" id="file">
             </div>
 
-
             <br> <br>
 
             <div align="center">
                 <input type="submit" id="home_submit" value="Submit" name="save">
                 <input type="reset" id="home_clear" value="Clear Form">
             </div>
-
         </form>
-        
 
         <!-- Working with Sessions-->
         <center>
         <?php if (isLoggedIn()) : ?>
-            <p>You are logged in. <a href="logout.php">Logout</a></p>
             <!-- only logged in user should access this link below-->
+            <p>You are logged in. <a href="logout.php">Logout</a></p>
             <a href="admin_page.php" target="_blank">Go To Database</a>
         <?php else : ?>
             <p>Are you an admin? If yes, <a href="login.php" target="_blank">Login</a>!</p>
@@ -135,13 +126,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
         </center>
 
     </div>
-    
 </body>
-
 </html>
-
-
-
-
-
-

@@ -17,7 +17,3 @@ function createHeart(){
     }, 5000);
 }
 setInterval(createHeart, 300);
-
-
-
-

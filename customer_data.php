@@ -18,10 +18,8 @@ if (isset($_GET['id'])){
 }
 
 
-
 // download to pdf file
 if (isset($_POST['download'])){
-
     header("Location: http://localhost/flight_booking-app/print_pdf.php?id={$data['id']}");
     exit;
 }
@@ -49,10 +47,10 @@ if (isset($_POST['download'])){
                     <img src="http://localhost/flight_booking-app/uploads/<?= $data["image_file"]; ?>" alt="">
                 <?php endif; ?>
 
-                <h2><?php echo htmlspecialchars($data["customer_name"]); ?></h2> 
-                <p><b>ID:</b> <?php echo htmlspecialchars($data["id"]); ?></p>
-                <p>Email: <?php echo htmlspecialchars($data["email"]); ?></p>
-                <p>Phone Number: <?php echo htmlspecialchars($data["phone_no"]);?></p>
+                <h2><?php echo ["customer_name"]; ?></h2> 
+                <p><b>ID:</b> <?php echo $data["id"]; ?></p>
+                <p>Email: <?php echo $data["email"]; ?></p>
+                <p>Phone Number: <?php echo $data["phone_no"];?></p>
                 <p>Number of Traveler(s): <?php echo $data["crew"];?></p>
                 <p>Destination: <?php echo $data["location_to"];?></p>
                 <p>Booking Time: <?php echo $data["booking_time"];?></p>
@@ -60,7 +58,7 @@ if (isset($_POST['download'])){
                 <p>Airline: <?php echo $data["airline"];?></p>
                 <p>Fare: <?php echo $data["fare"];?></p>
                 <p>Seat: <?php echo $data["seat"];?></p>
-                <p>Your Message: <?php echo htmlspecialchars($data["customer_message"]);?></p>
+                <p>Your Message: <?php echo $data["customer_message"];?></p>
 
                 <form action="" method="POST">
                     <button id="pdf" type="submit" name="download">Download PDF</button>

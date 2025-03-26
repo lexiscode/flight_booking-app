@@ -30,7 +30,4 @@ function getCustomerData($conn, $id){
     // return mysqli_fetch_array($get_result, MYSQLI_ASSOC);
     return mysqli_fetch_assoc($get_result);
     
-
 }
-
-

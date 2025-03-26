@@ -18,13 +18,13 @@ try {
         default:
             throw new Exception("An error occurred while uploading!");
     }
-    // i choose to want to limit upload size to 5MB below
+    // i choose to want to limit upload size to 5MB 
     if ($_FILES['file']['size'] > 5000000){
-        throw new Exception("File is too large!");
+        throw new Exception("File size is too large!");
     }
 
     // Specifying the type of MIME type
-    $mime_types = ['image/gif', 'image/png', 'image/jpeg'];
+    $mime_types = ['image/gif', 'image/png', 'image/jpeg', 'image/jpg'];
     $finfo = finfo_open(FILEINFO_MIME_TYPE);
     $mime_type = finfo_file($finfo, $_FILES['file']['tmp_name']);
     // below means if the file is not of the type specified, throw an error
@@ -33,7 +33,7 @@ try {
     }
 
     // moves the uploaded file from system's /tmp dir to project's root "uploads" dir
-    //$destination = "../uploads/" . $_FILES['file']['name']; using this doesn't prevent code injection
+    //$destination = "./uploads/" . $_FILES['file']['name']; using this doesn't prevent code injection
     // prevent filename code injections first
     $pathinfo = pathinfo($_FILES['file']['name']);
     $base = $pathinfo['filename'];
@@ -55,11 +55,8 @@ try {
 
     // moves the file to the "uploads" directory
     move_uploaded_file($_FILES['file']['tmp_name'], $destination);
-
    
 } catch (Exception $e){
     $error = $e->getMessage();
 }
-
-
 
